@@ -1,11 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchStreams } from '../../actions'
+import { fetchStreams, deleteStream } from '../../actions'
 import { Link } from 'react-router-dom'
 
 class StreamList extends React.Component {
   componentDidMount() {
     this.props.fetchStreams()
+  }
+
+  delete = () => {
+    this.props.deleteStream()
   }
 
   renderAdminControls = (stream) => {
@@ -15,9 +19,9 @@ class StreamList extends React.Component {
           <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
             Edit
           </Link>
-          <button className="ui button negative">
+          <Link to={`/streams/delete/${stream.id}`} className="ui button negative">
             Delete
-          </button>
+          </Link>
         </div>
       )
     }
@@ -38,10 +42,12 @@ class StreamList extends React.Component {
       return (
         <div key={stream.id} className="item">
           {this.renderAdminControls(stream)}
-          <i className="massive middle aligned icon camera" />
+          <i className="big middle aligned icon camera" />
           <div className="content">
-            <h3>{stream.title}</h3>
-            <div className="description">{stream.description}</div>
+            <Link to={`/streams/${stream.id}`} className="header">
+              <h3>{stream.title}</h3>
+              <div className="description">{stream.description}</div>
+            </Link>
           </div>
         </div>
       )
