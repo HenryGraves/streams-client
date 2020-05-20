@@ -63,7 +63,7 @@ class StreamList extends React.Component {
     // only shows a button if signed in
     if (this.props.isSignedIn) {
       return (
-        <div style={{textAlign: 'right'}}>
+        <div className="middle aligned" style={{textAlign: 'left'}}>
           <Link to="/streams/new" className="ui button primary">
             Create New Stream
           </Link>
@@ -75,9 +75,10 @@ class StreamList extends React.Component {
   render() {
     const {  } = this.props.streams
     return ( <>
-      <h2>Streams</h2>
-      <div className="ui celled list">{this.renderList()}</div>
+      <h2>Live Streams</h2>
       {this.renderCreateButton()}
+      <div className="ui celled list">{this.renderList()}</div>
+      
     </>)
   }
 } // end component
