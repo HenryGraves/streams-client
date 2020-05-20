@@ -14,12 +14,11 @@ const Header = () => {
       <i class="fab fa-glide"></i> &nbsp; Glide 
       </Link>
       <div className="right menu">
-        <Link to="/" className="item" style={{fontSize: 25}}>
+        {/* <Link to="/" className="item" style={{fontSize: 25}}>
         <FontAwesomeIcon icon={faHome}/>
-        </Link>
+        </Link> */}
         <div className="item">
           <GoogleAuth />
-          
         </div>
         
       </div>
