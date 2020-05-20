@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="ui secondary pointing menu">
       <Link to='/' className="item" style={{fontSize: 30}}>
-      <i class="fab fa-glide"></i> &nbsp; Glide 
+      <i class="fab fa-glide"></i> &nbsp; G L I D E 
       </Link>
       <div className="right menu">
         {/* <Link to="/" className="item" style={{fontSize: 25}}>
