@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchStreams, deleteStream } from '../../actions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeadset } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 class StreamList extends React.Component {
@@ -42,7 +44,10 @@ class StreamList extends React.Component {
       return (
         <div key={stream.id} className="item">
           {this.renderAdminControls(stream)}
-          <i className="big middle aligned icon camera" />
+          
+          <i className="big middle aligned icon"> 
+          <FontAwesomeIcon style={{fontSize: 30}} icon={faHeadset}/>
+          </i>
           <div className="content">
             <Link to={`/streams/${stream.id}`} className="header">
               <h3>{stream.title}</h3>
